@@ -1,0 +1,14 @@
+{
+  "name": "stock-watch",
+  "homepage": "https://github.com/DeepakChoudhari/stock-watch",
+  "authors": [
+    "Deepak Choudhari <Deepak.Choudhari@outlook.com>"
+  ],
+  "description": "A starter project using AngularJS 1.x",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

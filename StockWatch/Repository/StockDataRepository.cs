@@ -36,7 +36,7 @@ namespace StockWatch.Repository
                     }
                 }
             }
-            catch(ApplicationException ex)
+            catch(ApplicationException)
             {
                 // Log the exception
             }
