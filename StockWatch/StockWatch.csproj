@@ -133,7 +133,6 @@
   <ItemGroup>
     <Content Include="Content\starter-template.css" />
     <Content Include="Global.asax" />
-    <Content Include="Index.html" />
     <Content Include="Scripts\app\stockWatchController.js" />
     <Content Include="Scripts\app\stockWatchService.js" />
     <Content Include="Scripts\bower_components\angular\angular-csp.css" />
