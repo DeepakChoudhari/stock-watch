@@ -155,7 +155,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="bower_components\bower.json" />
+    <Content Include="bower.json" />
     <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
