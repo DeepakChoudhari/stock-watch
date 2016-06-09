@@ -37,18 +37,33 @@
 
     <div class="container" ng-controller="stockWatchController as vm">
         <div class="starter-template">
-            <div class="input-group input-group-lg">
-                <input type="search" class="form-control" placeholder="Enter symbol, name or keyword..." ng-model="vm.query">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="vm.doStockLookup()">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    </button>
-                </span>
-            </div><!-- /input-group -->
+            <form ng-submit="vm.doStockLookup()">
+                <div class="input-group input-group-lg">
+                    <input type="search" class="form-control" placeholder="Enter symbol, name or keyword and hit Enter..." ng-model="vm.query">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </span>
+                </div><!-- /input-group -->
+            </form>
             <p>
-                <span ng-show="vm.symbolLookupResult !== null">{{ vm.symbolLookupResult }}</span>
+                <table ng-if="vm.symbolLookupResult" class="table table-striped table-bordered table-condensed table-hover">
+                    <thead>
+                        <th class="text-left">Symbol</th>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Exchange</th>
+                    </thead>
+                    <tbody class="table-hover">
+                        <tr ng-repeat="symbol in vm.symbolLookupResult">
+                            <td class="text-left">{{ symbol.Symbol }}</td>
+                            <td class="text-left">{{ symbol.Name }}</td>
+                            <td class="text-left">{{ symbol.Exchange }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </p>
-        </div>
+        </div> <!-- starter-template -->
     </div><!-- /.container -->
 
 

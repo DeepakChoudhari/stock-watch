@@ -9,6 +9,7 @@
         vm.query = '';
         vm.symbolLookupResult = null;
         vm.doStockLookup = doStockLookup;
+        document.querySelector("input").focus();
         
         function doStockLookup() {
             if (!vm.query)
@@ -26,7 +27,7 @@
                     config – {Object} – The configuration object that was used to generate the request.
                     statusText – {string} – HTTP status text of the response.
                 */
-                vm.symbolLookupResult = response.data;
+                vm.symbolLookupResult = JSON.parse(response.data);
         }
             
         function errorCallback(response) {
