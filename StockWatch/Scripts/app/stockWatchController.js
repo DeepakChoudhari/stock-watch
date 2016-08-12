@@ -1,7 +1,11 @@
 (function(){
     "use strict";
 
-    angular.module("stockWatchApp", []).controller("stockWatchController", stockWatchController);
+    if (!angular.module('stockWatchApp')) {
+        angular.module('stockWatchApp', []);
+    }
+
+    angular.module("stockWatchApp").controller("stockWatchController", stockWatchController);
     stockWatchController.$inject = ['stockWatchService'];
     
     function stockWatchController(stockWatchService) {
