@@ -1,3 +1,69 @@
 ﻿<div class="starter-template" ng-controller="stockQuoteController as vm">
-    <div>{{vm.stockQuoteDetails}}</div>
+    <div class="panel panel-default" ng-if="vm.stockQuoteDetails">
+        <div class="panel-heading">
+            <h3 class="panel-title">Stock Quote for {{vm.stockQuoteDetails.Name}} ({{vm.stockQuoteDetails.Symbol}})</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                    <th class="text-left">&nbsp;</th>
+                    <th class="text-left">&nbsp;</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">Name</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.Name}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Symbol</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.Symbol}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Last Price</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.LastPrice}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Change</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.Change}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Change Percent</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.ChangePercent}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Time</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.Timestamp}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Market Cap</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.MarketCap}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Volume</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.Volume}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">ChangeYTD</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.ChangeYTD}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">ChangePercentYTD</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.ChangePercentYTD}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">High</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.High}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Low</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.Low}}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Opening Price</td>
+                        <td class="text-left">{{vm.stockQuoteDetails.Open}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

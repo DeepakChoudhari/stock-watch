@@ -11,8 +11,10 @@
     function stockQuoteController(stockWatchService, routeParams) {
         var vm = this;
 
-        vm.stockQuoteDetails = "";
-        stockWatchService.getStockQuote(routeParams.symbolName).then(successCallback, errorCallback);
+        vm.stockQuoteDetails = null;
+        if (!vm.stockQuoteDetails) {
+            stockWatchService.getStockQuote(routeParams.symbolName).then(successCallback, errorCallback);
+        }
 
         function successCallback(response) {
             /*
@@ -24,7 +26,7 @@
                     statusText – {string} – HTTP status text of the response.
             */
 
-            vm.stockQuoteDetails = JSON.stringify(response.data);
+            vm.stockQuoteDetails = JSON.parse(response.data);
         }
 
         function errorCallback(response) {
