@@ -15,12 +15,14 @@
                         <th class="text-left">Symbol</th>
                         <th class="text-left">Name</th>
                         <th class="text-left">Exchange</th>
+                        <th class="text-left">&nbsp;</th>
                     </thead>
                     <tbody class="table-hover">
                         <tr ng-repeat="symbol in vm.symbolLookupResult">
                             <td class="text-left">{{ symbol.Symbol }}</td>
                             <td class="text-left">{{ symbol.Name }}</td>
                             <td class="text-left">{{ symbol.Exchange }}</td>
+                            <td class="text-left"><a ng-href="#{{symbol.Symbol}}">Stock Quote</a></td>
                         </tr>
                     </tbody>
                 </table>

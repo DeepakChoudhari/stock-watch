@@ -6,11 +6,11 @@
 
     function appRouteConfiguration($routeProvider) {
         $routeProvider.when('/', {
-            templateUrl: './scripts/app/stockLookup.html',
+            templateUrl: '/scripts/views/stockLookup.html',
             controller: 'stockWatchController'
-        }).when('/{qName}', {
-            templateUrl: './stockDetails.html',
-            controller: 'stockDetailsController'
+        }).when('/:symbolName', {
+            templateUrl: '/scripts/views/stockQuote.html',
+            controller: 'stockQuoteController'
         });
     }
 

@@ -7,7 +7,8 @@ angular.module("stockWatchApp").service("stockWatchService", stockWatchService);
     function stockWatchService($http) {
         
         var service = {
-            lookupSymbol: lookupSymbol
+            lookupSymbol: lookupSymbol,
+            getStockQuote: getStockQuote
         };
         
         return service;
@@ -15,7 +16,11 @@ angular.module("stockWatchApp").service("stockWatchService", stockWatchService);
         ///////////////////
         
         function lookupSymbol(symbol) {
-            return $http.get('/api/stockwatch?query=' + symbol);
+            return $http.get('/api/stockwatch/lookup?query=' + symbol);
+        }
+
+        function getStockQuote(symbol) {
+            return $http.get('/api/stockwatch/quote?symbol=' + symbol);
         }
 
     }

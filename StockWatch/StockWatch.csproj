@@ -134,9 +134,11 @@
     <Content Include="Content\starter-template.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\stockLookup.html" />
+    <Content Include="Scripts\app\stockQuoteController.js" />
+    <Content Include="Scripts\views\stockLookup.html" />
     <Content Include="Scripts\app\stockWatchController.js" />
     <Content Include="Scripts\app\stockWatchService.js" />
+    <Content Include="Scripts\views\stockQuote.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

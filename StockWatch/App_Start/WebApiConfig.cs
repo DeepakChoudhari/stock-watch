@@ -13,11 +13,11 @@ namespace StockWatch
             // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{query}",
-                defaults: new { controller = "StockWatch", query = RouteParameter.Optional }
-            );
+            //config.Routes.MapHttpRoute(
+            //    name: "DefaultApi",
+            //    routeTemplate: "api/{controller}/{query}",
+            //    defaults: new { controller = "StockWatch", query = RouteParameter.Optional }
+            //);
         }
 
         private static void ResolveDependencies(HttpConfiguration config)

@@ -18,6 +18,13 @@ namespace StockWatch.Repository
             return result;
         }
 
+        public async Task<string> GetStockQuoteDetails(string stockName)
+        {
+            var requestUri = "api/v2/quote/json?symbol=" + stockName;
+            var result = await ProcessHttpRequest(requestUri);
+            return result;
+        }
+
         private async Task<string> ProcessHttpRequest(string requestUri)
         {
             var result = string.Empty;
