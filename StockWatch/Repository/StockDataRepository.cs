@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -44,9 +45,9 @@ namespace StockWatch.Repository
                     }
                 }
             }
-            catch(ApplicationException)
+            catch(ApplicationException aEx)
             {
-                // Log the exception
+                Trace.TraceError("Error occurred while making GET request - {0}", aEx);
             }
 
             return string.Empty;

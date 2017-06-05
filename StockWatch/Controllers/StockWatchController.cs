@@ -1,4 +1,5 @@
 ﻿using StockWatch.Repository;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Web.Http;
 
@@ -17,7 +18,16 @@ namespace StockWatch.Api
         [Route("lookup")]
         public async Task<IHttpActionResult> GetStockLookup(string query)
         {
+            if (string.IsNullOrEmpty(query))
+                return BadRequest("Required input is null");
+
+            Trace.TraceInformation("[GetStockLookup] Input received - " + query);
+
+            var stopWatch = Stopwatch.StartNew();
             var result = await stockDataRepository.LookupStockName(query);
+            var timeTakenForStockLookupCall = stopWatch.ElapsedMilliseconds;
+
+            Trace.TraceInformation(string.Format("[GetStockLookup] Time taken to execute LookupStockName api call for input [{0}] - {1}ms", query, timeTakenForStockLookupCall));
 
             if (!string.IsNullOrEmpty(result))
                 return Ok(result);
